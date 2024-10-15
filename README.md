@@ -82,7 +82,7 @@ sudo virsh net-autostart default
 
 Step #3 - NixOS Hooks  
 a. It is difficult to enable hooks, since NixOS has immutable root directories, ie /var/ or /etc/. Therefore hooks in /var/lib/libvirt/qemu/qemu.d/hooks/win10 or /etc/libvirt/qemu.d/hooks/win10 will not work (to my understanding).   
-Because of this, ssh is used to manually run hooks. However, this can be done easily through termux, as NixOS' sshd server is always running. Note that these hooks are modified from https://github.com/joeknock90/Single-GPU-Passthrough
+Because of this, ssh is used to manually run hooks. However, this can be done easily through termux, as NixOS' sshd server is always running. Note that these hooks are modified from https://github.com/joeknock90/Single-GPU-Passthrough     
 ~/run.sh
 ```
 #!/run/current-system/sw/bin/bash
