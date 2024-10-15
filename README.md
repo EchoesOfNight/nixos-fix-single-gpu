@@ -72,7 +72,11 @@ e. WARNING: other essential configurations
 ```
  services.openssh.enable = true; #enables sshd for nixos
  networking.firewall.allowedTCPPorts = [ 5900 5901 ];  # Required to open VNC ports to insall drivers
-```   
+```
+run in console to start network by default
+```
+sudo virsh net-autostart default
+```
 
 -make sure to add card as a pcie device to virt-manager, before continuing 
 
