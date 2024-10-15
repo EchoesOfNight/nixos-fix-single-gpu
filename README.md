@@ -1,12 +1,12 @@
 # nixos-fix-single-gpu
-this is a quickfix for nixos using a single gpu to passthrough based off this tutorial by blandmanstudios
+this is a quickfix for nixos using a single gpu to passthrough based off this tutorial by blandmanstudios   
 https://youtu.be/eTWf5D092VY?si=1O2EXiYISSR45V4N
 
-Step 1# - Follow this tutorial by blandmanstudios
+Step 1# - Follow this tutorial by blandmanstudios   
 Single GPU Passthrough Tutorial - KVM/VFIO
 https://youtu.be/eTWf5D092VY?si=1O2EXiYISSR45V4N
 
-Step 2# - NixOS modifications
+Step 2# - NixOS modifications   
 a. install packages
 ```
 kvm 
@@ -159,7 +159,9 @@ echo 1 > /sys/class/vtconsole/vtcon0/bind
 #echo 1 > /sys/class/vtconsole/vtcon1/bind
 ```
 b. To run, find IP address using `ip addr` and start an SSHD daemon `sudo systemctl start sshd` . Then connect on another machine on linux or termux (android)/PuTTy (windows), using the command `ssh <username>@<ipAddress> `   
-Then use the `sudo bash ~/run.sh` script to start the machine, and after turning off the VM, run `sudo bash ~/end.sh` to enter the host environment again.     
+Then use the `sudo bash ~/run.sh` script to start the machine, and after turning off the VM, run `sudo bash ~/end.sh` to enter the host environment again.    
+
+To install on your first time you must use a VNC client, like pkgs.tigervnc or androidVNC and then install the correct nvidia drivers https://www.nvidia.com/en-us/drivers/
 
 Issues:   
 Hooks are not automatic and need to be cleaned up   
