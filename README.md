@@ -167,8 +167,26 @@ Then use the `sudo bash ~/run.sh` script to start the machine, and after turning
 To install on your first time you must use a VNC client, like pkgs.tigervnc or androidVNC and then install the correct nvidia drivers https://www.nvidia.com/en-us/drivers/
 
 Issues:   
-Hooks are not automatic and need to be cleaned up   
-Second monitor will not work (display breaks)   
+Hooks are not automatic and need to be cleaned up    
+
+
+Second monitor breaks display fix     
+-go to XML of VM   
+-switch video model from QXL to none   
+```<video>
+  <model type="qxl" ram="65536" vram="65536" vgamem="16384" heads="1" primary="yes">
+    <resolution x="1920" y="1080"/>
+  </model>
+  <address type="pci" domain="0x0000" bus="0x00" slot="0x01" function="0x0"/>
+</video>
+```
+to   
+```
+<video>
+  <model type="none"/>
+</video>
+```   
+
 
 
 
