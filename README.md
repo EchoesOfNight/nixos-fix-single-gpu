@@ -93,9 +93,11 @@ set -x
 sudo bash ./start.sh &
 
 # Wait 10 seconds
+sleep 10
 sudo bash ./start.sh
 
 # Wait 5 seconds, replace win10 with your VM name
+sleep 5
 sudo virsh start win10
 ```
 If sudo virsh start win10 cannot find the VM, run `sudo virsh define /var/lib/libvirt/qemu/win10.xml` or whatever is your xml path        
