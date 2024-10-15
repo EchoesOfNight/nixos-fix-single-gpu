@@ -159,7 +159,12 @@ echo 1 > /sys/class/vtconsole/vtcon0/bind
 #echo 1 > /sys/class/vtconsole/vtcon1/bind
 ```
 b. To run, find IP address using `ip addr` and start an SSHD daemon `sudo systemctl start sshd` . Then connect on another machine on linux or termux (android)/PuTTy (windows), using the command `ssh <username>@<ipAddress> `   
-Then use the `sudo bash ~/run.sh` script to start the machine, and after turning off the VM, run `sudo bash ~/end.sh` to enter the host environment again. 
+Then use the `sudo bash ~/run.sh` script to start the machine, and after turning off the VM, run `sudo bash ~/end.sh` to enter the host environment again.     
+
+Issues:   
+Hooks are not automatic and need to be cleaned up   
+Second monitor will not work (display breaks)   
+
 
 
 
